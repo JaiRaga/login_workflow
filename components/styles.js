@@ -79,9 +79,23 @@ export const LeftIcon = styled.View`
   z-index: 1
 `
 
-export const RighttIcon = styled.View`
+export const RighttIcon = styled.TouchableOpacity`
   position: absolute;
-  left: 15px;
+  right: 15px;
   top: 38px;
   z-index: 1
+`
+
+export const StyledButton = styled.TouchableOpacity`
+  padding: 15px;
+  background-color: ${brand};
+  justify-content: center;
+  border-radius: 5px;
+  margin-vertical: 5px;
+  height: 60px;
+`
+
+export const ButtonText = styled.Text`
+  color: ${primary};
+  font-size: 16px;
 `
