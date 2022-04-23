@@ -24,12 +24,12 @@ import {
   TextLink,
   TextLinkContent,
 } from './../components/styles';
-import foodLogo from './../assets/img/food2.jpg';
+import foodLogo from './../assets/img/food1.jpg';
 import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
 const { brand, darkLight, primary } = Colors;
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
   return (
     <KeyboardAvoidingWrapper>
@@ -41,7 +41,10 @@ const Login = () => {
           <SubTitle>Account Login</SubTitle>
           <Formik
             initialValues={{ email: '', password: '' }}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={(values) => {
+              console.log(values);
+              navigation.navigate("Welcome")
+            }}
           >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
               <StyledFormArea>
@@ -79,7 +82,7 @@ const Login = () => {
                 </StyledButton>
                 <ExtraView>
                   <ExtraText>Don't have an account already? </ExtraText>
-                  <TextLink>
+                  <TextLink onPress={() => navigation.navigate("Signup")}>
                     <TextLinkContent>Signup</TextLinkContent>
                   </TextLink>
                 </ExtraView>
